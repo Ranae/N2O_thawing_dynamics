@@ -1,0 +1,266 @@
+---
+title: "Mesocosm Manuscript"
+author: "Ranae Dietzel"
+date: "March 8, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#THAWING DYNAMICS ALTER NITROUS OXIDE FLUXES AND NITROUS OXIDE REDUCTION EFFICIENCY
+
+##Abstract
+
+Nitrous oxide (N2O) catalyzes reactions leading to stratospheric ozone depletion and is an important greenhouse gas whose emission from soil is especially high during spring freeze-thaw cycles (FTC) in temperate regions. A better understanding of the factors that drive higher N2O emissions during these periods may lead to knowledge useful for designing effective mitigation strategies. A laboratory-simulated FTC in soil microcosms was used to measure the ratio of N2O to total gaseous N emitted (rN2O) during periods of high N2O emissions. I found that rN2O decreased (0.64 0.0) over time after thawing. This result suggests that a lack of reduction of N2O to N2 during denitrification may be contributing to the high N2O emissions measured during soil thawing. The simulated FTC experiment was also used to examine the effect of soil thawing rate on N2O emissions. Recent field work (Chapter 2) indicated that temperature buffering created by an insulating soil cover during the winter may lead to lower N2O emissions in the spring. Such buffering may result in higher minimum soil temperatures, shorter freeze durations, fewer FTC and slower rates of freezing and thawing. Rate of soil thawing was examined here. Slower thawing led to higher N2O emissions (1200 vs. 750 ng N2O-N cm-2 h-1). This result suggests that slower thawing is not the sole mechanism responsible for lower N2O emissions in agricultural fields with more soil cover. Further work should focus on interactions between temperature-dependent variables that lead to higher N2O emissions during spring thawing in order to refine potential mitigation strategies and improve climate modeling efforts.
+ 
+
+
+
+##Introduction
+
+Nitrous oxide (N2O) is both a greenhouse gas and a catalyst of stratospheric ozone depletion. It ranks 4th behind carbon dioxide (CO2), methane (CH4), and dichlorodifluoromethane (CFC-12) in global climate change forcing (Forster et al. 2007). Unlike these other gases, N2O comes mainly from the soil (70%) (Conrad 1996). Of the N2O emissions associated with human activity, 60% come from agricultural lands (Smith 2007).
+
+Nitrous oxide is a by-product of several microbially-mediated nitrogen (N) transformations, including N mineralization, nitrification, anaerobic ammonium oxidation (anammox) and denitrification (Roberston and Groffman 2007). During anaerobic microbial respiration via the denitrification pathway, nitrate (NO3-) is sequentially reduced to N2 gas as microbes use the intermediary N compounds as terminal electron acceptors (TEA) (Figure 3.1). In order for denitrification to occur, oxygen (O2) must be limited, NO3- must be available as a TEA, carbon (C) must be available as a substrate and the microorganisms capable of denitrification must be present (Smith and Tiedje 1979). While N2 is generally the final product of denitrification, the reduction series can be incomplete, resulting in the release of N2O. Thus, denitrification events yield a combination of N2 and N2O as end products.
+
+Denitrification is the dominant N transformation during soil freeze-thaw cycles (FTC) (Ludwig et al. 2004, Oquist et al. 2004, Koponen et al. 2006, Morkved et al. 2006); times when unique physical, chemical and biological conditions prevail. These conditions contribute to the phenomenon of high N2O emissions in the spring that can contribute to up to 66% of annual emissions in agricultural soils (Duxbury et al. 1982).
+
+When soil freezes from the top downwards, water redistribution to the top of the soil profile is induced. This creates an ice lens. Upon thawing from the top downwards, the ice lens blocks snow melt-water from draining. Such an FTC creates saturated to super-saturated soil conditions (Miller 1980). Soil aggregates, organic matter and microbial cells are also disrupted/ruptured during an FTC. This releases a flush of carbon C substrates and nutrients into the soil solution (Christensen and Christensen 1991, Herrmann and Witter 2002). As the soil solution freezes, solutes are excluded from the ice, but retained within microfilms, causing nutrient concentrations to increase and pH to decrease. During thawing, these solutes are slowly diluted and pH returns to previous levels (Stahli and Stadler 1997). All of these conditions combined create the ideal environment for denitrification.
+
+It is uncertain if increases in denitrification can account for the magnitude of increases in N2O emissions typically measured during FTC. It is possible that in addition to an increase in the overall rate of denitrification, there may be an increase in the proportion of gaseous N that is emitted as N2O instead of N2 (Holtan-Hartwig et al. 2002). This relationship can be expressed as a ratio:
+
+
+Observed effects of FTC on rN2O from the soil are inconsistent. While some studies find that rN2O increases with decreasing temperature (Bailey and Beauchamp 1973, Keeney et al. 1979, Melin and Nommik 1983, Muller et al. 2003); other studies find no effect of temperature on rN2O (Holtan-Hartwig et al. 2002, Morkved et al.
+
+2006). Ludwig et al. (2004) showed rN2O increased with time after thawing, while Muller et al. 2003) showed rN2O decreased over time after thawing. Thus, the contribution of N2O reduction inefficiency to high N2O emissions during thawing remains unclear. One purpose behind this study was to further investigate changes in rN2O during and after soil thawing. I hypothesized that rN2O would decrease with time after thawing, providing evidence that peak periods of N2O emissions are caused not only by increases in denitrification, but also by decreases in the proportion of N2O reduced to N2. To test this hypothesis, I simulated a freeze-thaw cycle in soil microcosms contained in a temperature controlled chamber.
+
+In addition to examining rN2O under controlled conditions, this simulated FTC allowed me to measure the effect of soil thawing rates on N2O emissions. Evidence that the rate at which the soil thaws may be important to N2O emissions comes from a few recent field studies. Wagner-Riddle et al. (2007) found that agricultural soils with more surface residue cover during the winter spent fewer hours below 0°C and emitted less total N2O. Similarly, Maljanen et al. (2007) and Dietzel (Chapter 2) found that more snow cover led to warmer soils and lower N2O emissions in agricultural fields. These studies indicate that spring N2O emissions may be controlled by managing soil cover via adding residues or growing cover crops or by changes in snow cover resulting from climate change.
+
+The relationships between soil cover, soil temperature, and N2O fluxes are not well defined. The insulating effects of soil cover may result in higher minimum soil temperatures, shorter freezing duration, fewer FTC, and/or slower rates of freezing and thawing. Determining which of these temperature components affects N2O emissions more strongly will give us mechanistic insight into how soil FTC affect N2O emissions and will help guide management decisions and climate change predictions. One temperature component, the rate of soil thawing, was used to test the hypothesis that a slower thaw rate caused by soil insulation will lead to lower N2O emissions.
+
+
+##Materials and Methods
+
+###Experimental logistics
+
+One hundred and two intact soil cores containing a Howard gravelly silt loam (mixed, active, mesic Glossic Haplualf) were excavated from a NY cornfield in mid-May, 2008. The cores were contained in 5 cm diam x 30 cm long PVC pipes and taken to a depth of 20 cm to leave a 10 cm headspace (196 ml) to facilitate gas flux measurements. The field had been planted with corn for the previous two years, which followed several years of alfalfa. In the prior growing season (2007), the field received 34 kg N ha-1 starter fertilizer and 92 kg N ha-1 side-dressing from 30% Nitan, an inorganic fertilizer. These were the same experimental plots used by Rich (2008) and Dietzel (Chapter 2).
+
+The intact soil cores were packed into a plywood-sided, metal-bottomed box measuring 90 x 90 x 30 cm (l x w x h). Two cores near the middle of the box were fitted with thermocouples at 0, 2, 5, 10, 15 and 20 cm depths to record temperature changes throughout the profile of the soil cores. Thermocouples were connected to a CR3000 datalogger (Campbell Scientific, Logan, UT). Fifteen centimeters were left between the edge of the box and the cores. This space and the interstitial spaces between the cores were packed with soil to a 20 cm height at a bulk density similar to that of the soil in the cores (1.31 g cm-3). Twenty liters of deionized water were added to the bottom of the box, saturating the bottom 6 cm of soil inside the cores.
+
+The box was housed inside a refrigerated shipping container (Mitsubishi 1994, Model CPE15-3BAIIIF, Kanagawa, Japan). The shipping container had been retrofitted with heaters. The temperature was monitored and controlled by climate control software (Labview 8.5, National Instruments, Dallas, TX). To simulate a possible New York FTC, the software was programmed to reduce the air temperature from 16°C to -10°C over 30 h. The temperature was to be held at -10°C for 24 h and then increased to 13°C gradually over 24 h, thus keeping the air temperature below 0°C for a total of 50 h.
+
+During the temperature increase, at 1°C air temperature, deionized water of the same temperature (~ 30 ml) was added to every core until the soil in the core was visibly supersaturated, thus simulating snowmelt. Cores were monitored visually until no water remained on the surface of the soil of any core, after which 2 ml soil samples were taken every 24 h from cores included specifically to monitor soil water content. Soil subsamples were dried and weighed to determine water-filled pore space (WFPS) (Robertson and Groffman 2007).
+
+Cores were left in place and randomly allocated to five separate groups. Group 1 cores were used for ancillary measurements - these housed the thermocouples and provided soil samples for WFPS measurements. Group 2 was used to measure N2O fluxes (rate of N2O emitted per unit area over time, ng N2O-N cm-2 h-1) during and after soil thawing and to establish how long after thawing N2O fluxes peaked. Groups 3-5 were used to estimate rN2O at different times over the experiment by use of a standard core method (Groffman et al. 2006). To measure rN2O, half of the cores used at each time point were injected with acetylene (C2H2), which prevents the reduction of N2O to N2 and thus provides an estimate of total gaseous N losses. The other half of the cores used at each time point were injected with N2 and these cores provided an estimate of the N2O flux itself. Group 3 cores were used for rN2O estimates between 30-48 h, Group 4 cores were used for this test between 104-122 h and Group 5 cores were used for these estimates from 176-194 h after the air temperature reached 0°C.
+
+Group 1 contained 20 randomly selected cores. Flux measurements were taken from these cores beginning when the air temperature reached 0°C during reheating (hour 0). Measurements were made using a static core method (Groffman et al. 2006). Each core was covered with parafilm and then capped with a PVC cap fitted with an autoclaved butyl rubber stopper. Seven milliliters of headspace gas were drawn out with a syringe at 0, 30, and 60 min after capping and stored in 3 ml Vacutainers (no additive, Becton, Dickinson and Co. Franklin Lakes, NJ). Flux measurements were repeated every 12 h for 196 h. The N2O concentration in the sampled headspace gas was determined within 7 d of sampling by use of a 86Ni equipped gas chromatograph (Varian GC Model 3700, Varian, Inc., Palo Alto, CA) as described by Terry et al. (1989). Calibration curves were created using custom standards mixed in 3 ml Vacutainers. Fluxes of N2O from the cores were calculated from linear regression of the change in headspace N2O concentration over the three sampling times (0, 30, 60 min). This rate of change in headspace concentration was divided by the soil surface area to determine ng N2O cm-2 hr-1. The Hutchinson-Mosier equation was used when the concentration gradient met the required conditions (Hutchinson and Mosier 1981).
+
+
+###r2O
+
+Groups 3, 4 and 5 contained 24 cores each and were used to determine rN2O by use of the C2H2 block method (Groffman et al. 2006). Acetylene prevents N2O from being reduced to N2, thus N2O produced is the sum of the N2O + N2 produced. Cores were sealed as described above with an added layer of parafilm on the outside of the cap. The headspace of half of the cores in each group received a 10% volume of C2H2 and the other half of the cores in each group received a 10% volume of N2. Both gases were pumped with a syringe to mix them within the cores upon injection.
+
+A 7 ml headspace gas sample was drawn 6, 12, and 18 h after C2H2 or N2 was injected. Gas samples were stored and N2O concentration determined as described above. The rN2O was determined by dividing the mean non-blocked fluxes (N2O emissions) by the mean C2H2 blocked fluxes (N2O + N2 emissions) (Equation 3.1). The first C2H2 block was run from hours 30-48, the second from hours 104-122, the third from hours 176-194.
+
+
+###Rate of soil thaw
+
+To test the effect of insulation and a slower thaw rate on N2O fluxes, hydrophobic cotton insulation (~5 cm) was randomly added to the surface of half of the cores (10 of 20) in Group 2 after the soil was frozen, but before it began to thaw. Cores with and without cotton insulation were distributed evenly with respect to distance from the center of the box. One of the cores that was fitted with thermocouples at various depths also received insulation, but was not otherwise
+sampled. The N2O fluxes during peak times were compared between treatments over time using a restricted maximum likelihood model (REML) in JMP 7.0 (SAS Institute, Cary, NC).
+
+
+##Results
+
+The freeze-thaw cycle simulation and insulation treatments were established as planned. The air temperatures in the shipping container reached -10°C and soil temperatures at all depths reached -6°C. Freezing occurred from the top downwards and from the bottom upwards as shown in (Figure 3.2A). Thawing also occurred from both directions, with the 5 cm depth being the last soil depth to thaw after 69 and 75.5 h for non-insulated and insulated cores, respectively (Figure 3.2B). Insulated cores took 6.5 h longer to thaw at 5 cm depth than the non-insulated cores. Water was visible on the surface of the cores at 76 h, but absent at 84 h, indicating the ice lenses were breaking and water began draining during these eight hours. This coincided with the thaw at 5 cm. After the ice lens melted and standing water drained, the top 5 cm of the cores maintained ~65% WFPS.
+
+
+###r2O
+
+The proportion of gaseous N that was emitted as N2O decreased over time after thawing (Figure 3.3A). Between 30 and 48 h, fluxes averaged 1.8 and 2.9 ng N2O-N cm-2 h-1 in non-blocked and C2H2 blocked cores, respectively, for an rN2O of 0.64. Between 104 and 122 h, fluxes averaged 66.3 and 173.7 ng N2O-N cm-2 h-1 in non-blocked and C2H2 blocked cores, respectively, for an rN2O of 0.38. Between 104 and 122 h, fluxes averaged -432.6 and -141.1 ng N2O-N cm-2 h-1 in non-blocked and C2H2 blocked cores, respectively. Since the amount of N2O produced relative to the amount of N2O + N2 produced was the value of interest, and neither could be detected in the
+third time period, the rN2O was considered equal to 0.0. Nitrous oxide fluxes measured for the acetylene block method differed greatly between time points (Figure 3.3B, Table 3.1).
+
+
+###Rate of soil thaw
+
+Insulated cores had higher N2O fluxes during peak times than non-insulated cores (p=0.03) (Figure 3.4). Nitrous oxide emissions began at 85 (±7) and 87 (±3) h and peaked at 156 (±7) and 148 (±7) h for the non-insulated and insulated cores, respectively. An N2O peak was measured in each core, but with much variability between cores. Peak fluxes ranged from 225 to 3115 ng N2O-N cm-2 h-1. Insulated cores also peaked sooner than non-insulated cores (Figure 3.4).
+
+
+##Discussion
+
+###r2O
+
+The proportion of gaseous N emitted as N2O relative to all gaseous N emissions decreased with time after thawing as shown by decreasing rN2O, as hypothesized. This indicates that decreased reduction of N2O to N2 may contribute to the magnitude of N2O peaks measured following a freeze-thaw cycle. Decreased rN2O with time after thawing is consistent with trends found by Muller et al. (2003) in which rN2O decreased over time after thawing. However, in their study soil temperature continued to increase over time, whereas the soil temperature in my experiment increased to 12°C over 136 h and remained constant thereafter while N2O fluxes continued to rise. My results point to a combination of changes in the activity of nitrous oxide reductase (Nos) that occurred both in response to temperature and over time because the temperature was unchanging as N2O fluxes continued to rise.
+						
+
+
+
+Figure 3.2 Time taken for soil to (A) freeze at different soil depths and (B) thaw at different soil depths after the air temperature was reduced to 0°C or raised to 0°C during freezing and thawing, respectively. Data come from two cores before (A) and after (B) the insulation treatment was implemented.
+
+Figure 3.3 Changes in rN2O over time after air temperature reached 0°C. Correspondence of rN2O with N2O flux activity is shown in (A). Bars in (A) represent time periods when nN2O measurements were taken. rN2 O is derived from soil core Group 3 and N2O flux activity from soil core Group 2 (non-insulated cores). N2O flux measurements averaged over non-blocked and C2H2 blocked soil cores for each period are shown in (B).
+
+
+Table 3.1. Headspace concentrations of N2O from cores without (N2O) and with (N2O + N2) C2H2 injected 6, 12, and 18 h after injection. Ambient headspace N concentrations were assumed to be 11 ng N cm-3. N2O fluxes for these time periods are also shown, but were derived by finding fluxes for individual soil cores and then averaging.
+
+
+Figure 3.4 Mean N2O fluxes after the air temperature reaches 0°C (0 h) for non-insulated and insulated soil core treatments.
+
+
+Other studies addressing reduction of N2O to N2 with respect to time after an event use the onset of anaerobiosis as the seminal event. The enzymes catalyzing reduction of NO3- and NO2- to N2O (nitrate reductase and nitrite reductase) have been found to be synthesized within 5 h of anaerobiosis, but the enzyme catalyzing the reduction of N2O to N2 (nitrous oxide reductase, Nos) is not synthesized until 16-33 h after O2 is depleted (Smith and Tiedje 1979, Firestone and Tiedje 1979, Dendooven and Anderson 1994). In addition, nitrate and nitrite reductases have been found to be very persistent in soils, while nitrous oxide reductase is less persistent (Smith and Parson 1985, Dendooven and Anderson 1994). Similar enzyme dynamics, if they are occurring during soil thawing, could help to explain the initially high rN2O measured once soil thawing began. Enzymes responsible for the production of N2O (nitric oxide reductases) may be preserved during freezing and quickly activated upon thawing. Meanwhile the enzyme responsible for N2O reduction (Nos) may not be preserved and may take much longer to be synthesized. The resulting increases in production and decreases in the reduction of N2O would be reflected in a high value for rN2O and high N2O peaks, as were measured in this study.
+
+Evidence further supporting the contribution of large rN2O to high N2O fluxes can be seen in the relationship of general flux activity to changes in rN2O (Figure 3.3A). The rN2O measured during 30-48 h occurred while most of the soil was frozen and its contribution to total N2O emissions was small. However, the second rN2O (0.38) was measured between 104-122 h while N2O fluxes were trending upwards and the third rN2O (0.0) was measured between 176-194 h while N2O fluxes were trending downwards. This downward trend in N2O flux activity coincided with no detectable production of N2O from the cores used to determine rN2O. These results suggest that the observed decreases in N2O fluxes could have resulted from increases in reduction of N2O to N2.
+
+A decrease in rN2O does not necessarily mean more N2O is being reduced because it could also indicate that less N2O is being produced. However, in this study, reduction of N2O to N2 was reflected in the negative N2O fluxes measured during the third rN2O measurement period. In these cores, headspace N2O concentrations increased during the initial 6 h incubation (Table 3.1), indicating production of this gas within the core. The cores remained sealed and over the next 12 h, the N2O concentration in the headspace decreased; indicating that the existing N2O was being "consumed", most likely by its reduction to N2.
+
+Previous studies in which denitrification enzyme activities were examined have relied on measurements of gaseous N emissions as indicators of enzyme activity (Smith and Tiedje 1979, Firestone and Tiedje 1979, Dendooven and Anderson 1994, Holtan-Hartwig et al. 2002). Molecular techniques now allow more direct measurements of activity. In essence, mRNA coding for the various reductases of interest can be extracted from soil and reverse-transcribed into cDNA. The cDNA can then be used in PCR experiments and the resulting amplicons used for other analyses, such as cloning and sequencing. The number of copies of the mRNA that directs the synthesis of the necessary denitrification enzymes can be estimated using qPCR, the results of which indicate how much of a given enzyme is being produced in the soil sampled. Sharma et al. (2006) was the first study where this technique was used for this purpose. They found increased expression of nitrate- and nitrite- reductase genes (narG or napA and nirS or nirK, respectively) two days after soil thawing, with decreased expression after the third and ninth days. No expression of nosZ, the gene coding for nitrous oxide reductase, was detected in the 9 days following the thaw, suggesting it was either not produced or was produced in very small amounts, below the limit of detection of their assay. Little or no production of Nos in the soils in their study would explain the high rN2O typically measured during thawing.
+
+Decreases in N2O flux and increases in N2O reduction to N2 could also be due to a lack of NO3- availability (Weier et al. 1993). As NO3--N in the soil solution is used as a TEA, its availability decreases. When NO3- availability is limited, N2O becomes the more abundant electron acceptor. However, only some microbes can reduce both NO3- and N2O (Throback 2006). If NO3- depletion was the cause of lower N2O fluxes, this could indicate a microbial community shift from denitrifiers only able to reduce NO3- to N2O to denitrifiers able to reduce N2O to N2. This or other mechanisms responsible for the high rN2O values measured immediately following freezing have yet to be determined. My results provide evidence that a high rN2O may explain the high spring N2O emissions observed. This suggests mitigation strategies should not only aim to reduce denitrification, but to reduce rN2O as well.
+
+
+###Rate of soil thaw
+
+Insulated cores had higher N2O fluxes than non-insulated cores, although the opposite result was hypothesized. The insulated cores were expected to have lower N2O fluxes based on the field results in which lower N2O fluxes were measured in plots with soil cover (Chapter 2, Wagner-Riddle et al. 2007, Maljenen et al. 2007). Higher fluxes in insulated cores may have been the result of more cellular damage to microbes. This would be compatible with basic cryobiological theory that slower temperature change during thawing results in greater cellular damage due to ice recrystallization (Mazur 1970). More damage may have resulted in a greater loss of microbial biomass and a larger nutrient flush. Intracellular damage has also been speculated to occur (Holtan-Hartwig 2002, Morkved 2006), inhibiting the ability of microbes to reduce N2O. Because only some microbes possess the gene required for reducing N2O (Throback 2006), another possibility is that there was greater mortality or intracellular damage experienced by this sub-population within the soil microbial community.
+
+These laboratory results contrast with results from field trials where covered (insulated) soil had lower N2O fluxes than bare soil (Wagner-Riddle 2007, Maljanen 2007, Chapter 2). Field soils experience many conditions not replicated in this simulation, such as differences in freezing rates, freezing duration and frequency and the lowest temperature attained. Contrasting what factors were controlled in the laboratory microcosm study and those that were not may provide insight into which field processes most strongly affect N2O emissions. In the simulated FTC, rate of thaw and timing of when the ice lens broke were the only derived temperature components that differed between the two treatments. Here, rate of thaw yielded results that were opposite to those observed in the field. This indicates that, when duration and depth of freezing are held constant, insulation retards thawing and increase N2O emissions. Rate of thawing under field conditions will depend on the insulation (soil cover), but will also depend on depth and duration of freezing, which are also mediated by soil cover. Other temperature dependent variables, such as freezing rate, depth of freezing, freezing duration, frequency of FTC, and the lowest temperature attained may have a stronger influence on N2O flux rates under field conditions. Establishing which temperature variables most strongly influence spring N2O emissions will enable us to design management strategies that manipulate these variables to mitigate N2O emissions. Evidence from this study suggests that soils should be managed to thaw at a faster rate or reduce the intensity of freezing events.
+ 
+Conclusions
+
+The amount of N2O emitted relative to total gaseous N emitted (rN2O) in the laboratory simulation decreased with time after thawing (0.64 0.0). Higher reduction of N2O to N2 coincided with decreases in N2O flux measurements. This suggests that N2O peaks that occur following a freeze-thaw cycle may in part be due to a lack of reduction of N2O to N2. This mechanism may explain why N2O is emitted in such large amounts during spring soil thawing. With this in mind, mitigation strategies should to be designed that will not only help to decrease overall denitrification in the spring, but will also create conditions that will lead to more efficient reduction of N2O to N2.
+
+Insulation delayed thawing and led to higher N2O fluxes. This was possibly due to damage suffered by microbial communities with thawing occurring at a slower rate, leading to a larger flush of substrate and nutrients for denitrification. This may relate to field situations where the ground freezes first and then receives a cover of insulation, such as snow or mulch. Thus, increasing soil insulation after soils have already frozen should not be recommended as a management practice because it is unlikely to mitigate N2O emissions and may actually exacerbate them. In other scenarios studied, where soils experienced differing freezing rates, duration, frequency and lowest temperatures, insulation decreased N2O emissions (Wagner-Riddle et al. 2007, Maljenen et al. 2007, Chapter 2), most likely because insulation reduced the depth to which the soil froze, and thus reduced the time needed for the soil to thaw. Further research investigating the combination of temperature dependent variables that are the primary drivers of spring N2O emissions is needed so that we can design and test more effective management strategies to reduce spring N2O emissions from agricultural landscapes.
+
+
+REFERENCES
+
+
+Bailey, L. and E. Beauchamp. 1973. Effects of temperature on NO3- and NO2-reduction, nitrogeneous gas production, and redox potential in a saturated soil. Canadian Journal of Soil Science 53:213-218
+
+Cavigelli, M. and P. Robertson. 2000. The functional significance of denitrifier community composition in a terrestrial ecosystem. Ecology 81:1402-1414
+
+Christensen, S. and B. Christensen. 1991. Organic matter available for denitrification in different soil fractions: effect of freeze/thaw cycles and straw disposal. Journal of Soil Science 42:637-647
+
+Conrad, R. 1996. Soil microorganisms as controllers of atmospheric trace gases (H2, CO, OCS, N2O, and NO). Microbiology and Molecular Biology Reviews 60:609-618
+
+Dendooven, L. and J. Anderson. 1994. Dynamics of reduction enzymes involved in the denitrification process in pasture soils. Soil Biology & Biochemistry 26:1501-1506
+
+Firestone, M. and J. Tiedje. 1979. Temporal changes in nitrous oxide and dinitrogen from denitrification following onset of anaerobiosis. Applied and Environmental Microbiology 38:673-679
+
+Forster, P., Ramaswamy, V., Artaxo, P., Berntsen, T., Betts, R., Fahey, D., Haywood, J., Lean, J., Lowe, D., Myhre, G., Nganga, J., Prinn, R., Raga, G., Schulz, M., and R. Van Dorland, 2007. Changes in atmospheric constituents and in radiative forcing. In: Climate Change 2007: The Physical Science Basis. Contribution of Working Group I to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change [Solomon, S., D. Qin, M. Manning, Z. Chen, M. Marquis, K.B. Averyt, M.Tignor and H.L. Miller (eds.)]. Cambridge University Press, Cambridge, UK and New York, NY,
+
+USA
+
+Groffman, P., Altabet, M., Bohlke, J., Butterbach-Bahl, K., David, M., Firestone, M., Giblin, A., Kana, T., Nielsen, L. and M. Voytek. 2006. Methods for measuring denitrification: diverse approaches to a difficult problem. Ecological Applications 16:2091-2122
+
+Goregues, C., Michotey, V. and P. Bonin. 2005. Molecular, biochemical, and physiological approaches for understanding the ecology of denitrification. Microbial Ecology 49:198-208
+ 
+
+
+
+
+
+78
+ 
+
+Herrmann A. and E. Witter. 2002. Sources of C and N contributing to the flush in mineralization upon freeze-thaw cycles in soils. Soil Biology & Biochemistry 34:1495-1505
+
+Holtan-Hartwig, L., Dorsch, P., and L. Bakken. 2002. Low temperature control of soil denitrifying communities: kinetics of N2O production and reduction. Soil Biology & Biochemistry 34:1797-1806
+
+Hutchinson, G. and A. Mosier. 1981. Improved soil cover method for field measurement of nitrous oxide fluxes. Soil Science Society of America Journal 45:311-316
+
+Keeney, D., Fillery, I., and G. Marx. 1979. Effect of temperature on the gaseous nitrogen products of denitrification in a silt loam soil. Soil Science Society of America Journal 43:1142-1128
+
+Koponen, H., Jaakkol, H., Keinanen-Toivola, M., Kaipainen, S., Tuomainen, J., Servoma, K., and P. Martikainen. 2006. Microbial communities, biomass, and activities in soils as affected by freeze thaw cycles. Soil Biology & Biochemistry 38:1861-1871
+
+Ludwig, B., Wolf, I., and R. Teepe. 2004. Contribution of nitrification and denitrification to the emission of N2O in a freeze-thaw even in an agricultural soil. Journal of Plant Nutrition and Soil Science 167:678-684
+
+Maljanen, M., Kohonen, A., Virkajarvi, P., and P. Martikainen. 2007. Fluxes and production of N2O, CO2, and CH4 in boreal agricultural soil during winter as affected by snow cover. Tellus 59B:853-859
+
+Matzner, E. and W. Borken. 2008. Do freeze-thaw events enhance C and N losses from soils of different ecosystems? European Journal of Soil Science 59: 274-284
+
+Mazur, P. 1970. Cryobiology: the freezing of biological systems. Science 168: 939-949
+
+Melin, J. and H. Nommik. 1983. Denitrification measurements in intact soil cores. Acta Agriculturae Scandinavica 33:145-151
+
+Miller, R. 1980. Freezing phenomena in soils. In: Applications of Soil Physics [D. Hillel (ed.)], Academic Press, Inc., New York, NY, USA pp. 254-298
+
+Morkved, P., Dorsch, P., Henriksen, T., and L. Bakken. 2006. N2O emissions and product ratios of nitrification and denitrification as affected by freezing and thawing. Soil Biology & Biochemistry 38:3411-3420
+ 
+
+
+
+
+79
+ 
+
+
+Muller, C., Kammann, C., Ottow, J., and H. Jager. 2003. Nitrous oxide emission from frozen grassland soil and during thawing periods. Journal of Plant Nutrition and Soil Science 166:46-53
+
+Oquist, M., Nilsson, M., Sorensson, F., Kasimir-Klemedtsson, A., Persson, T., Weslien, P., and L. Klemedtsson. 2004. Nitrous oxide production in a forest soil at low temperatures - processes and environmental controls. FEMS Microbiology Ecology 49:371-378
+
+Rich, J. 2008. Winter itrogen Cycling in Agroecosystems as Affected by Snow Cover and Cover Crops (M.S. Thesis, Cornell University) Ithaca, NY, USA
+
+Robertson, G. and P. Groffman. 2007. Nitrogen transformations. In: Soil Microbiology, Ecology, and Biochemistry (E. Paul, ed) Academic Press, Oxford, UK pp. 341-362
+
+Rover, M., Heinemeyer, O., and E. Kaiser. 1998. Microbial induced nitrous oxide emissions from an arable soil during winter. Soil Biology & Biochemistry 30:1859-1865
+
+Sharma, S., Szele, Z., Schilling, R., Munch, J., and M. Schloter. 2006. Influence of freeze-thaw stress on the structure and function of microbial communities and denitrifying populations in soil. Applied and Environmental Microbiology 72:2148-2154
+
+Smith, P., Martino, D., Cai, Z., Gwary, D., Janzen, H., Kumar, P., McCarl, B., Ogle, S.,O'Mara, F., Rice, C., Scholes, B., and O. Sirotenko, 2007. Agriculture. In Climate Change 2007: Mitigation. Contribution of Working Group III to the Fourth Assessment Report of the Intergovernmental Panel on Climate Change
+
+[Metz, B., O.R. Davidson, P.R. Bosch, R. Dave, and L.A. Meyer (eds.)], Cambridge University Press, Cambridge, UK and New York, NY, USA
+
+Smith, S. and L. Parsons. 1985. Persistence of denitrifying enzyme activity in dried soils. Applied and Environmental Microbiology 49:316-320
+
+Smith, S. and J. Tiedje. 1979. Phases of denitrification following oxygen depletion in soil. Soil Biology & Biochemistry 11:261-267
+
+Stahli M. and D. Stadler. 1997. Measurement of water and solute dynamics in freezing soil columns with time domain and reflectrometry. Journal of Hydrology 195:352-369
+
+
+
+
+
+
+
+
+80
+ 
+
+Teepe, R., Vor, A., Beese, F., and B. Ludwig. 2004. Emissions of N2O from soils during cycles of freezing and thawing and the effects of soil water, texture and duration. European Journal of Soil Science 55:357-365
+
+Terry, R., Tate, R., and J. Duxbury. 1981. The effect of flooding on nitrous oxide emissions from an organic soil. Air Pollution Control Association 31:1173-1176
+
+Throback, I. 2006. Exploring Denitrifying Communities in the Environment.
+(Dissertation. Swedish University of Agricultural Sciences) Uppsala, Sweden
+
+Wagner-Riddle, C., Furon, A., McLaughlin, N., Lee, I., Barbeau, J., Jayasundra, S., Parkin, G., von Bertoldi, P., and J. Warland. 2007. Intensive measurement of nitrous oxide emissions from a corn-soybean-wheat rotation under two contrasting management systems over 5 years. Global Change Biology 13:1722-1736
+
+Wagner-Riddle, C., Hu, Q., van Bochove, E., and S. Jayasundara. 2008. Linking nitrous oxide flux during spring thaw to nitrate denitrification in the soil profile. Soil Science Society of America Journal 72:908-916
+
+Weier, K., Doran, J., Power, J., and D. Walters. 1993. Denitrification and the dinitrogen/nitrous oxide ratio as affected by soil water, available carbon, and nitrate. Soil Science Society of America Journal 57:66-72
+
+Walsh, J., Jasperson, W., and B. Ross. 1985. Influences of snow cover and soil moisture on monthly air temperature. Monthly Weather Review 113:756-778
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
