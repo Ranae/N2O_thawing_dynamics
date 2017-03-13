@@ -1,0 +1,92 @@
+---
+title: "short_communication"
+author: "Ranae Dietzel"
+date: "March 13, 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(plotrix)
+library(modelr)
+```
+
+## Slower soil thawing leads to greater nitrous oxide flux
+
+Nitrous oxide (N2O) is both a greenhouse gas and a catalyst of stratospheric ozone depletion. It ranks 4th behind carbon dioxide (CO2), methane (CH4), and dichlorodifluoromethane (CFC-12) in global climate change forcing (Forster et al. 2007). Nitrous oxide from freezing and thawing soils constitutes a large portion of the world's N2O. Recent work has highlighted that neglecting these areas has thrown global estimates off by 18-23%. 
+
+A body of research dedicated to elucidating mechanisms behind freeze-thaw N2O peaks has found many interesting things. However, the importance of specific physical drivers of N2O peaks remains unknown due to complexities of field conditions. Findings on soil cover. We used a controlled environment to study one specific component of freeze-thaw cycles - the rate of thaw. We hypothesized that an insulating soil cover would slow soil thaw rates and lead to greater N2O emissions.
+
+One hundred and two intact soil cores containing a Howard gravelly silt loam (mixed, active, mesic Glossic Haplualf) were excavated from a NY cornfield in mid-May, 2008. The cores were contained in 5 cm diam x 30 cm long PVC pipes and taken to a depth of 20 cm to leave a 10 cm headspace (196 ml) to facilitate gas flux measurements. The field had been planted with corn for the previous two years, which followed several years of alfalfa. In the prior growing season (2007), the field received 34 kg N ha-1 starter fertilizer and 92 kg N ha-1 side-dressing from 30% Nitan, an inorganic fertilizer.
+
+The intact soil cores were packed into a plywood-sided, metal-bottomed box measuring 90 x 90 x 30 cm (l x w x h). Two cores near the middle of the box were fitted with thermocouples at 0, 2, 5, 10, 15 and 20 cm depths to record temperature changes throughout the profile of the soil cores. Thermocouples were connected to a CR3000 datalogger (Campbell Scientific, Logan, UT). Fifteen centimeters were left between the edge of the box and the cores. This space and the interstitial spaces between the cores were packed with soil to a 20 cm height at a bulk density similar to that of the soil in the cores (1.31 g cm-3). Twenty liters of deionized water was added to the bottom of the box, saturating the bottom 6 cm of soil inside the cores.
+
+The box was housed inside a refrigerated shipping container (Mitsubishi 1994, Model CPE15-3BAIIIF, Kanagawa, Japan). The shipping container had been retrofitted with heaters. The temperature was monitored and controlled by climate control software (Labview 8.5, National Instruments, Dallas, TX). To simulate a freeze-thaw cycle, the software was programmed to reduce the air temperature from 16°C to -10°C over 30 h. The temperature was held at -10°C for 24 h and then increased to 13°C gradually over 24 h, thus keeping the air temperature below 0°C for a total of 50 h.
+
+During the temperature increase, at 1°C air temperature, deionized water of the same temperature (~ 30 ml) was added to every core until the soil in the core was visibly supersaturated, thus simulating snowmelt. Cores were monitored visually until no water remained on the surface of the soil of any core, after which 2 ml soil samples were taken every 24 h from cores included specifically to monitor soil water content. Soil subsamples were dried and weighed to determine water-filled pore space (WFPS) (Robertson and Groffman 2007).
+
+Cores were left in place and randomly allocated to five separate groups. Group 1 cores were used for ancillary measurements - these housed the thermocouples and provided soil samples for WFPS measurements. Group 2 was used to measure N2O fluxes (rate of N2O emitted per unit area over time, ng N2O-N cm-2 h-1) during and after soil thawing and to establish how long after thawing N2O fluxes peaked. 
+
+Group 1 contained 20 randomly selected cores. Flux measurements were taken from these cores beginning when the air temperature reached 0°C during reheating (hour 0). Measurements were made using a static core method (Groffman et al. 2006). Each core was covered with parafilm and then capped with a PVC cap fitted with an autoclaved butyl rubber stopper. Seven milliliters of headspace gas were drawn out with a syringe at 0, 30, and 60 min after capping and stored in 3 ml Vacutainers (no additive, Becton, Dickinson and Co. Franklin Lakes, NJ). Flux measurements were repeated every 12 h for 196 h. The N2O concentration in the sampled headspace gas was determined within 7 d of sampling by use of a 86Ni equipped gas chromatograph (Varian GC Model 3700, Varian, Inc., Palo Alto, CA) as described by Terry et al. (1989). Calibration curves were created using custom standards mixed in 3 ml Vacutainers. Fluxes of N2O from the cores were calculated from linear regression of the change in headspace N2O concentration over the three sampling times (0, 30, 60 min). This rate of change in headspace concentration was divided by the soil surface area to determine ng N2O cm-2 hr-1. The Hutchinson-Mosier equation was used when the concentration gradient met the required conditions (Hutchinson and Mosier 1981).  
+
+```{r}
+flux<-read_csv("data/mesocosm_fluxes.csv")
+head(flux)
+
+flux%>%
+  filter(`ng N2O-N cm-2hr-1`>-500)%>%
+  group_by(Hour, Insulation)%>%
+  summarise(mean = mean(`ng N2O-N cm-2hr-1`, na.rm = TRUE), se = std.error(`ng N2O-N cm-2hr-1`, na.rm = TRUE))->flux2
+
+  ggplot(flux2, aes(x=Hour, y=mean, group=Insulation))+
+  geom_point()+
+  geom_errorbar(aes(ymin = mean - se, ymax = mean +se))+
+  geom_smooth(method = "loess")
+
+```  
+
+```{r}  
+  flux_hours_possible <- expand.grid(
+    Hour            = seq(from=min(flux$Hour), max(flux$Hour), by=2), #Decide resolution here.
+    Insulation      = c("Y", "N"),
+    stringsAsFactors = FALSE
+  )
+
+flux_intpolated <- flux2 %>% 
+  right_join(flux_hours_possible, by=c("Insulation", "Hour")) %>% #Incorporate locations to interpolate
+  group_by(Insulation)%>%
+  mutate(
+    N_interpolated = spline(x=Hour, y=mean  , xout=Hour,  method="natural")$y,
+      ) %>% 
+  ungroup()
+
+```  
+
+```{r}
+# using the inbuilt dataset "pressure"
+plot(pressure,type="l")
+
+# create loess object and prediction function
+yes<-filter(flux2, Insulation == "Y" )
+no<-filter(flux2, Insulation == "N" )
+
+
+fity<-loess(mean ~ Hour, yes)
+fy <- function(x) predict(fity,newdata=x)
+yeah<-integrate(fy, 0, 192)$value
+
+fitn<-loess(mean ~ Hour, no)
+fn <- function(x) predict(fitn,newdata=x)
+nope<-integrate(fn, 0, 192)$value
+
+well<-tibble(ins = c("no", "yes"), n2o = c(nope, yeah))
+
+ggplot(well, aes(x=ins, y=n2o))+
+  geom_bar(stat = "identity")
+
+
+data_grid(flux2, Hour = seq_range(Hour, 192), mean, Insulation)%>%
+  add_predictions(fit)
+
+```
