@@ -1,24 +1,38 @@
 ---
-title: "short_communication"
-author: "Ranae Dietzel"
+title: "Slower soil thawing leads to greater nitrous oxide flux"
+author: "Ranae Dietzel, Janice Thies, David Wolfe, and Sotirios Archontoulis"
 date: "March 13, 2017"
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(plotrix)
 library(modelr)
-```
 
-## Slower soil thawing leads to greater nitrous oxide flux
+this_theme<-theme_bw()+
+  theme(#panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    axis.line = element_line(),
+    legend.position='none', legend.title=element_blank(),
+    legend.text = element_text(size=12),
+    axis.title.x = element_text(size=22,vjust=-0.5),
+    axis.title.y = element_text(size=22,angle=90, vjust=1.2),
+    axis.text.x = element_text(colour="black", size=18),
+    axis.text.y = element_text(colour="black", size=18), 
+    strip.text = element_text(colour="black", size=18))
+
+theme_set(this_theme)
+
+```
 
 Nitrous oxide (N2O) is both a greenhouse gas and a catalyst of stratospheric ozone depletion. It ranks 4th behind carbon dioxide (CO2), methane (CH4), and dichlorodifluoromethane (CFC-12) in global climate change forcing (Forster et al. 2007). Nitrous oxide from freezing and thawing soils constitutes a large portion of the world's N2O. Recent work has highlighted that neglecting these areas has thrown global estimates off by 18-23%. 
 
 A body of research dedicated to elucidating mechanisms behind freeze-thaw N2O peaks has found many interesting things. However, the importance of specific physical drivers of N2O peaks remains unknown due to complexities of field conditions. Findings on soil cover. We used a controlled environment to study one specific component of freeze-thaw cycles - the rate of thaw. We hypothesized that an insulating soil cover would slow soil thaw rates and lead to greater N2O emissions.
 
-One hundred and two intact soil cores containing a Howard gravelly silt loam (mixed, active, mesic Glossic Haplualf) were excavated from a NY cornfield in mid-May, 2008. The cores were contained in 5 cm diam x 30 cm long PVC pipes and taken to a depth of 20 cm to leave a 10 cm headspace (196 ml) to facilitate gas flux measurements. The field had been planted with corn for the previous two years, which followed several years of alfalfa. In the prior growing season (2007), the field received 34 kg N ha-1 starter fertilizer and 92 kg N ha-1 side-dressing from 30% Nitan, an inorganic fertilizer.
+One hundred and two intact soil cores containing a Howard gravelly silt loam (mixed, active, mesic Glossic Haplualf) were excavated from a New York cornfield in mid-May, 2008. The cores were contained in 5 cm diam x 30 cm long PVC pipes and taken to a depth of 20 cm to leave a 10 cm headspace (196 ml) to facilitate gas flux measurements. The field had been planted with corn for the previous two years, which followed several years of alfalfa. In the prior growing season (2007), the field received 34 kg N ha-1 starter fertilizer and 92 kg N ha-1 side-dressing from 30% Nitan, an inorganic fertilizer.
 
 The intact soil cores were packed into a plywood-sided, metal-bottomed box measuring 90 x 90 x 30 cm (l x w x h). Two cores near the middle of the box were fitted with thermocouples at 0, 2, 5, 10, 15 and 20 cm depths to record temperature changes throughout the profile of the soil cores. Thermocouples were connected to a CR3000 datalogger (Campbell Scientific, Logan, UT). Fifteen centimeters were left between the edge of the box and the cores. This space and the interstitial spaces between the cores were packed with soil to a 20 cm height at a bulk density similar to that of the soil in the cores (1.31 g cm-3). Twenty liters of deionized water was added to the bottom of the box, saturating the bottom 6 cm of soil inside the cores.
 
@@ -30,63 +44,47 @@ Cores were left in place and randomly allocated to five separate groups. Group 1
 
 Group 1 contained 20 randomly selected cores. Flux measurements were taken from these cores beginning when the air temperature reached 0°C during reheating (hour 0). Measurements were made using a static core method (Groffman et al. 2006). Each core was covered with parafilm and then capped with a PVC cap fitted with an autoclaved butyl rubber stopper. Seven milliliters of headspace gas were drawn out with a syringe at 0, 30, and 60 min after capping and stored in 3 ml Vacutainers (no additive, Becton, Dickinson and Co. Franklin Lakes, NJ). Flux measurements were repeated every 12 h for 196 h. The N2O concentration in the sampled headspace gas was determined within 7 d of sampling by use of a 86Ni equipped gas chromatograph (Varian GC Model 3700, Varian, Inc., Palo Alto, CA) as described by Terry et al. (1989). Calibration curves were created using custom standards mixed in 3 ml Vacutainers. Fluxes of N2O from the cores were calculated from linear regression of the change in headspace N2O concentration over the three sampling times (0, 30, 60 min). This rate of change in headspace concentration was divided by the soil surface area to determine ng N2O cm-2 hr-1. The Hutchinson-Mosier equation was used when the concentration gradient met the required conditions (Hutchinson and Mosier 1981).  
 
-```{r}
+To test the effect of insulation and a slower thaw rate on N2O fluxes, hydrophobic cotton insulation (~5 cm) was randomly added to the surface of half of the cores (10 of 20) in Group 2 after the soil was frozen, but before it began to thaw. Cores with and without cotton insulation were distributed evenly with respect to distance from the center of the box. One of the cores that was fitted with thermocouples at various depths also received insulation, but was not otherwise sampled. The N2O fluxes during peak times were compared between treatments over time using a restricted maximum likelihood model (REML) in JMP 7.0 (SAS Institute, Cary, NC).  
+
+The freeze-thaw cycle simulation and insulation treatments were established as planned. The air temperatures in the shipping container reached -10°C and soil temperatures at all depths reached -6°C. Freezing occurred from the top downwards and from the bottom upwards as shown in (Figure 3.2A). Thawing also occurred from both directions, with the 5 cm depth being the last soil depth to thaw after 69 and 75.5 h for non-insulated and insulated cores, respectively (Figure 3.2B). Insulated cores took 6.5 h longer to thaw at 5 cm depth than the non-insulated cores. Water was visible on the surface of the cores at 76 h, but absent at 84 h, indicating the ice lenses were breaking and water began draining during these eight hours. This coincided with the thaw at 5 cm. After the ice lens melted and standing water drained, the top 5 cm of the cores maintained ~65% WFPS.  
+
+Insulated cores had higher N2O fluxes during peak times than non-insulated cores (p=0.03) (Figure 3.4). Nitrous oxide emissions began at 85 (±7) and 87 (±3) h and peaked at 156 (±7) and 148 (±7) h for the non-insulated and insulated cores, respectively. An N2O peak was measured in each core, but with much variability between cores. Peak fluxes ranged from 225 to 3115 ng N2O-N cm-2 h-1. Insulated cores also peaked sooner than non-insulated cores (Figure 3.4).
+
+```{r, message=FALSE, out.width=c('500px', '300px'), fig.show='hold'}
 flux<-read_csv("data/mesocosm_fluxes.csv")
-head(flux)
+#head(flux)
 
 flux%>%
-  filter(`ng N2O-N cm-2hr-1`>-500)%>%
+  filter(`ng N2O-N cm-2hr-1`>-500 & Hour > 60)%>%
   group_by(Hour, Insulation)%>%
   summarise(mean = mean(`ng N2O-N cm-2hr-1`, na.rm = TRUE), se = std.error(`ng N2O-N cm-2hr-1`, na.rm = TRUE))->flux2
 
-  ggplot(flux2, aes(x=Hour, y=mean, group=Insulation))+
+  ggplot(flux2, aes(x=Hour, y=mean, group=Insulation, color=Insulation))+
   geom_point()+
-  geom_errorbar(aes(ymin = mean - se, ymax = mean +se))+
-  geom_smooth(method = "loess")
-
-```  
-
-```{r}  
-  flux_hours_possible <- expand.grid(
-    Hour            = seq(from=min(flux$Hour), max(flux$Hour), by=2), #Decide resolution here.
-    Insulation      = c("Y", "N"),
-    stringsAsFactors = FALSE
-  )
-
-flux_intpolated <- flux2 %>% 
-  right_join(flux_hours_possible, by=c("Insulation", "Hour")) %>% #Incorporate locations to interpolate
-  group_by(Insulation)%>%
-  mutate(
-    N_interpolated = spline(x=Hour, y=mean  , xout=Hour,  method="natural")$y,
-      ) %>% 
-  ungroup()
-
-```  
-
-```{r}
-# using the inbuilt dataset "pressure"
-plot(pressure,type="l")
-
-# create loess object and prediction function
-yes<-filter(flux2, Insulation == "Y" )
+  #geom_errorbar(aes(ymin = mean - se, ymax = mean +se))+
+  geom_smooth(method = "loess")  
+  
+  yes<-filter(flux2, Insulation == "Y" )
 no<-filter(flux2, Insulation == "N" )
 
+#try<-group_by(flux, Core)
+#now<-loess(`ng N2O-N cm-2hr-1` ~ Hour, try)
+#this <- function(x) predict(now, newdata=x)
+#and<-integrate(this, 0, 192)
 
 fity<-loess(mean ~ Hour, yes)
 fy <- function(x) predict(fity,newdata=x)
-yeah<-integrate(fy, 0, 192)$value
+yeah<-integrate(fy, 72, 192)$value
 
 fitn<-loess(mean ~ Hour, no)
 fn <- function(x) predict(fitn,newdata=x)
-nope<-integrate(fn, 0, 192)$value
+nope<-integrate(fn, 72, 192)$value
 
 well<-tibble(ins = c("no", "yes"), n2o = c(nope, yeah))
 
 ggplot(well, aes(x=ins, y=n2o))+
   geom_bar(stat = "identity")
-
-
-data_grid(flux2, Hour = seq_range(Hour, 192), mean, Insulation)%>%
-  add_predictions(fit)
-
-```
+``` 
+  
+  
+Insulation delayed thawing and led to higher N2O fluxes. This was possibly due to damage suffered by microbial communities with thawing occurring at a slower rate, leading to a larger flush of substrate and nutrients for denitrification. This may relate to field situations where the ground freezes first and then receives a cover of insulation, such as snow or mulch. Thus, increasing soil insulation after soils have already frozen should not be recommended as a management practice because it is unlikely to mitigate N2O emissions and may actually exacerbate them. In other scenarios studied, where soils experienced differing freezing rates, duration, frequency and lowest temperatures, insulation decreased N2O emissions (Wagner-Riddle et al. 2007, Maljenen et al. 2007, Chapter 2), most likely because insulation reduced the depth to which the soil froze, and thus reduced the time needed for the soil to thaw. Further research investigating the combination of temperature dependent variables that are the primary drivers of spring N2O emissions is needed so that we can design and test more effective management strategies to reduce spring N2O emissions from agricultural landscapes.
