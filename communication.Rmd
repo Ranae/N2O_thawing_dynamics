@@ -49,14 +49,14 @@ The N2O fluxes during peak times were compared between treatments over time usin
 flux<-read_csv("data/mesocosm_fluxes.csv")
 #head(flux)
 
-flux%>%
-  filter(`ng N2O-N cm-2hr-1`>-500 & Hour > 60 & Core != 90 & Core !=30)%>%
+flux2<-flux%>%
+  filter(`ng N2O-N cm-2hr-1`>-500 & Hour > 60)%>%
   group_by(Hour, Insulation)%>%
-  summarise(mean = mean(`ng N2O-N cm-2hr-1`, na.rm = TRUE), se = std.error(`ng N2O-N cm-2hr-1`, na.rm = TRUE))->flux2
+  summarise(mean = mean(`ng N2O-N cm-2hr-1`, na.rm = TRUE), se = std.error(`ng N2O-N cm-2hr-1`, na.rm = TRUE))
 
   ggplot(flux2, aes(x=Hour, y=mean, group=Insulation, color=Insulation))+
   geom_point()+
-  geom_errorbar(aes(ymin = mean - se, ymax = mean +se))+
+  geom_errorbar(aes(ymin = mean - se, ymax = mean +se), width = .4)+
   geom_smooth(method = "loess")  
   
   flux%>%filter(Hour > 59)%>%
@@ -64,10 +64,12 @@ flux%>%
   geom_point()+
   #geom_errorbar(aes(ymin = mean - se, ymax = mean +se))+
   geom_smooth(method = "loess")+
-  facet_wrap(~Core)
-    
+  facet_wrap(~Core)  
   
   
+```  
+
+```{r cumulative}
   get_area <- function(df) {
     fit <- loess(`ng N2O-N cm-2hr-1` ~ Hour, df)
     f <- function(x) predict(fit,newdata=x)
@@ -90,29 +92,10 @@ flux%>%
     anova(okay)
   
   
-  
-yes<-filter(flux2, Insulation == "Y" )
-no<-filter(flux2, Insulation == "N" )
-
-#try<-group_by(flux, Core)
-#now<-loess(`ng N2O-N cm-2hr-1` ~ Hour, try)
-#this <- function(x) predict(now, newdata=x)
-#and<-integrate(this, 0, 192)
-
-fity<-loess(mean ~ Hour, yes)
-fy <- function(x) predict(fity,newdata=x)
-yeah<-integrate(fy, 72, 192)$value
-
-fitn<-loess(mean ~ Hour, no)
-fn <- function(x) predict(fitn,newdata=x)
-nope<-integrate(fn, 72, 192)$value
-
-well<-tibble(ins = c("no", "yes"), n2o = c(nope, yeah))
-
 ggplot(bars, aes(x=Insulation, y=mean))+
   geom_bar(stat = "identity")+
   geom_errorbar(aes(ymin = mean - se, ymax = mean + se), width=.3)
-```  
+```
 
 
   
